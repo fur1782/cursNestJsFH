@@ -83,6 +83,11 @@ export class PokemonService {
     return; 
   }
 
+  async removeAll(){
+    const response = await this.pokemonModel.deleteMany({});
+    console.log(response);
+    return 'removed';
+  }
 
   private handleExceptions( error: any ) {
     if (error.code === 11000) {
@@ -90,5 +95,14 @@ export class PokemonService {
       }
       console.log(error);
       throw new InternalServerErrorException(`Can't update Pokemon - Check server logs`);
+  }
+
+  async fillPokemonWithSeedData(pokemons: Pokemon[]){
+    try {
+        const pokemonList = await this.pokemonModel.insertMany(pokemons);
+        return pokemonList;
+    } catch (error) {
+      this.handleExceptions(error);
+    }
   }
 }
