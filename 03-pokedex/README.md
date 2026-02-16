@@ -20,6 +20,22 @@ npm i -g @nestjs/cli
 docker compose up -d
 ```
 
+5. Clonar el fitxer __.env.template__
+
+6. Omplir les variable d'entorn definides al __.env__
+
+7. Executar l'aplicació amb dev:
+
+```bash
+yarn start:dev
+```
+
+8. Reconstruir la BBDD amb la llavor (seed)
+```bash
+http://localhost:3000/api/v2/seed
+```
+
+
 ## Stack used
 * MongoDB
 * NestJS
