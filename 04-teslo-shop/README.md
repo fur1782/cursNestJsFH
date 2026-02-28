@@ -13,3 +13,8 @@
 docker compose up -d
 ```
 6. Aixecar: ```pnpm start:dev```
+
+7. Executar SEED
+```
+http://localhost:3000/api/seed
+```
